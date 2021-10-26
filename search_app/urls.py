@@ -3,8 +3,9 @@ from rest_framework import routers
 
 from . import views
 from .views import (
-    universityCsvIntoJsonData,
-    searchJsonData
+    exceltoJsonData,
+    searchJsonData,
+    searchExcelSheetData
 )
 
 
@@ -12,8 +13,9 @@ from .views import (
 # router.register('create-library-book', views.createLibraryBook) 
 
 urlpatterns = [
-    path('csv-to-json', universityCsvIntoJsonData, name="csv-to-json"),
+    path('csv-to-json', exceltoJsonData, name="csv-to-json"),
     path('search-word-json', searchJsonData, name="search-word-json"),
+    path('search-word-excel', searchExcelSheetData, name="search-word-excel"),
     # path('login', LoginAPI, name="login"),
     # path('', include(router.urls))
 ]
